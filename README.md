@@ -1,6 +1,5 @@
-# dss15_regression
+## Twitch Streamer Regression Analysis
 
-# Twitch 스트리머 회귀 분석
 ## 1. Intro
 #### Twitch 스트리머의 팔로우 증가수를 회귀 모델로 분석 및 예측
 
