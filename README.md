@@ -13,7 +13,7 @@
 - twitchdata-update.csv
 
 [twitchtracker] <https://twitchtracker.com/>
-- 방송 시작일(Date) 추가
+- BeautifulSoup을 활용한 크롤링으로 방송 시작일(Date) feature 추가
 
 ## 3. Built With
 
