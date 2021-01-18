@@ -235,6 +235,35 @@ predict_followers_gained(dhtekkz)
 # In fact, there are too many external variables that affects prediction.
 # But prediction for this channel was pretty good :)
 ```
+#### 2-6. 파라미터 값 조정
+
+```python
+# RandomForestRegressor의 max_depth를 4로 조정
+# Tuning max_depth and dropping Date column makes the best performance
+X = twitch_outlier_3.drop(columns = ['Channel','Language','Desc', 'Followers gained', 'Date'])
+y = twitch_outlier_3['Followers gained']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=10)
+
+estimators = [('scaler', StandardScaler()),
+     ('rgr', RandomForestRegressor(max_depth=4, random_state=10))]
+
+pipe = Pipeline(estimators)
+
+pipe.fit(X_train, y_train)
+
+y_pred_test = pipe.predict(X_test)
+
+rmse_test = (np.sqrt(mean_squared_error(y_test, y_pred_test)))
+lin_mae = mean_absolute_error(y_test, y_pred_test)
+r2 = r2_score(y_test, y_pred_test)
+mape = np.mean(np.abs((y_test - y_pred_test) / y_test)) * 100
+
+print('RMSE : {}'.format(int(round(rmse_test))), 'MAE : {}'.format(int(round(lin_mae))),
+      'MAPE : {}'.format(int(round(mape))), 'R2_Score : {}'.format(round(r2, 5)))
+      
+### RMSE : 200823 MAE : 111958 MAPE : 172 R2_Score : 0.71019
+```
 
 ## 3. Built With
 
