@@ -274,5 +274,5 @@ print('RMSE : {}'.format(int(round(rmse_test))), 'MAE : {}'.format(int(round(lin
 ## 4. Built With
 
 1. 김성준 : twitchtracker 크롤링, EDA, 모델링, 성능 평가, 추가 데이터 예측, README 작성
-2. 김종찬 :   
+2. 김종찬 :  EDA, 모델링, 성능평가, 데이터 예측 
 3. 정하윤 :
