@@ -19,7 +19,7 @@
 [twitchtracker] <https://twitchtracker.com/>
 - BeautifulSoup을 활용한 크롤링으로 방송 시작일(Date) feature 추가
 
-## 2. Process
+## 2. Preview
 
 ```python
 # 패키지 
@@ -265,7 +265,13 @@ print('RMSE : {}'.format(int(round(rmse_test))), 'MAE : {}'.format(int(round(lin
 ### RMSE : 200823 MAE : 111958 MAPE : 172 R2_Score : 0.71019
 ```
 
-## 3. Built With
+## 3. Review
+      1. Linear Regression에서 StandardScaler와 MinMaxScaler의 성능 차이가 없다는 의문점에 대해 추가 검색 및 학습 예정
+      2. 회귀 모델들의 parameter값에 따라 성능이 좋아짐 -> 이에 대한 추가 학습 후 적용 예정
+      3. Support Vector Classifier가 가장 좋은 성능을 보임
+      4. 주어진 features만으로 결과를 예측하기에는 결과에 영향을 끼치는 외부 요인이 너무 많다는 한계점 존재
+
+## 4. Built With
 
 1. 김성준 : twitchtracker 크롤링, EDA, 모델링, 성능 평가, 추가 데이터 예측, README 작성
 2. 김종찬 :   
