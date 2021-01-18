@@ -61,6 +61,7 @@ feature = pd.DataFrame(scaler.transform(feature), columns = feature.columns)
 model = sm.OLS(target, feature).fit()
 print(model.summary2())
 ```
+<img src="https://user-images.githubusercontent.com/71831714/104876541-3fcaf280-599b-11eb-80b9-14692b9ef6df.png"></img>
 
 ```python
 pd.DataFrame({
@@ -68,6 +69,23 @@ pd.DataFrame({
       "features": feature.columns
 })
 ```
+<img src="https://user-images.githubusercontent.com/71831714/104876380-ec58a480-599a-11eb-8953-7d8754bb02ae.png"></img>
+
+```python
+mask = np.zeros_like(twitch.corr(), dtype=np.bool)
+mask[np.triu_indices_from(mask)] = True
+
+# Set up the matplotlib figure
+f, ax = plt.subplots(figsize=(18, 15))
+
+# Generate a custom diverging colormap
+cmap = sns.diverging_palette(220, 10, as_cmap=True)
+
+# Draw the heatmap with the mask and correct aspect ratio
+sns.heatmap(twitch.corr(), mask=mask, cmap=cmap, vmax=.3, center=0,
+            square=True, linewidths=.5, cbar_kws={"shrink": .5});
+```
+<img src="https://user-images.githubusercontent.com/71831714/104876166-76ecd400-599a-11eb-9889-1dbca18a7aad.png"></img>
 
 #### 2-2. 데이터 전처리
 ```python
@@ -157,7 +175,10 @@ def lin_regr(data, drop_cols=[[], ['Date'], ['English'], ['Partnered'], ['Date',
     df_2.extend(df)
     df = pd.DataFrame(df)
     return df.sort_values(by='R2_Score', ascending=False).head()
+    
+lin_regr(twitch)
 ```
+<img src="https://user-images.githubusercontent.com/71831714/104876812-c384df00-599b-11eb-9041-ee7de97ab6fb.png"></img>
 
 #### 2-4. 성능 평가
 ```python
@@ -168,7 +189,6 @@ plt.figure(figsize=(16,9))
 sns.set_style("whitegrid")
 sns.boxplot(x='Drop Columns',y='R2_Score',data=table_df).set_title("R2 Score by Columns dropped");
 
-
 plt.figure(figsize=(16,9))
 sns.boxplot(x='Dataset',y='R2_Score',data=table_df).set_title("R2 Score by Dataset");
 
@@ -178,7 +198,11 @@ sns.boxplot(x='rgr',y='R2_Score',data=table_df).set_title("R2 Score by Rgr");
 plt.figure(figsize=(16,9))
 sns.boxplot(x='scaler',y='R2_Score',data=table_df).set_title("R2 Score by Scaler");
 ```
-
+<img src="https://user-images.githubusercontent.com/71831714/104876990-270f0c80-599c-11eb-83d1-617dd6ba649a.png"></img>
+<img src="https://user-images.githubusercontent.com/71831714/104876993-28403980-599c-11eb-99b4-03636c0f0fb1.png"></img>
+<img src="https://user-images.githubusercontent.com/71831714/104876996-29716680-599c-11eb-87cc-13f3a2e2baba.png"></img>
+<img src="https://user-images.githubusercontent.com/71831714/104876998-2aa29380-599c-11eb-97fb-397c10ef272e.png"></img>
+<img src="https://user-images.githubusercontent.com/71831714/104876999-2bd3c080-599c-11eb-85cb-607f9217cc5e.png"></img>
 
 #### 2-5. 추가 데이터 예측
 <img src="https://user-images.githubusercontent.com/71831714/104873394-bfed5a00-5993-11eb-8cc5-5bb17ae21ae3.png"></img>
