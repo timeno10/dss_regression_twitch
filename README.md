@@ -258,12 +258,12 @@ print('RMSE : {}'.format(int(round(rmse_test))), 'MAE : {}'.format(int(round(lin
 
 ## 3. Review
       1. Linear Regression에서 StandardScaler와 MinMaxScaler의 성능 차이가 없다는 의문점 -> 추가 검색 및 학습 예정
-      2. 회귀 모델들의 parameter값에 따라 성능이 좋아짐 -> 추가 학습 후 적용 예정
+      2. 회귀 모델들의 parameter값에 따라 성능이 크게 개선됨 -> 추가 학습 후 적용 예정
       3. Support Vector Classifier가 가장 좋은 성능을 보였음
-      4. 주어진 features만으로 결과를 예측하기에는 결과에 영향을 끼치는 외부 요인이 너무 많다는 한계점 존재
+      4. 주어진 features만으로 종속 변수를 예측하기에는 종속 변수에 영향을 끼치는 외부 변수가 너무 많다는 한계점 존재
 
 ## 4. Built With
 
-1. 김성준 : twitchtracker 크롤링, EDA, 모델링, 성능 평가, 추가 데이터 예측, README 작성
-2. 김종찬 :  EDA, 모델링, 성능 평가, 데이터 예측 
+1. 김성준 : twitchtracker 크롤링, EDA, 모델링, 성능 평가, 새로운 데이터 예측, README 작성
+2. 김종찬 : EDA, 모델링, 성능 평가, 새로운 데이터 예측 
 3. 정하윤 :
