@@ -176,25 +176,25 @@ plt.figure(figsize=(16,9))
 sns.set_style("whitegrid")
 sns.boxplot(x='Drop Columns',y='R2_Score',data=table_df).set_title("R2 Score by Columns dropped");
 ```
-<img src="https://user-images.githubusercontent.com/71831714/104876993-28403980-599c-11eb-99b4-03636c0f0fb1.png"></img>
+<img src="https://user-images.githubusercontent.com/71831714/105170234-fc6db100-5b5f-11eb-848d-448715044608.png" width='800'></img>
 ```
 # 데이터셋에 따른 R2 Score
 plt.figure(figsize=(16,9))
 sns.boxplot(x='Dataset',y='R2_Score',data=table_df).set_title("R2 Score by Dataset");
 ```
-<img src="https://user-images.githubusercontent.com/71831714/104876996-29716680-599c-11eb-87cc-13f3a2e2baba.png"></img>
+<img src="https://user-images.githubusercontent.com/71831714/105170239-fd9ede00-5b5f-11eb-8d3d-fa755298f2f3.png" width='800'></img>
 ```
 # 회귀 모델별 R2 Score
 plt.figure(figsize=(16,9))
 sns.boxplot(x='rgr',y='R2_Score',data=table_df).set_title("R2 Score by Rgr");
 ```
-<img src="https://user-images.githubusercontent.com/71831714/104876998-2aa29380-599c-11eb-97fb-397c10ef272e.png"></img>
+<img src="https://user-images.githubusercontent.com/71831714/105170242-fe377480-5b5f-11eb-9dd8-882492ba4460.png" width='800'></img>
 ```
 # Scaler별 R2 Score
 plt.figure(figsize=(16,9))
 sns.boxplot(x='scaler',y='R2_Score',data=table_df).set_title("R2 Score by Scaler");
 ```
-<img src="https://user-images.githubusercontent.com/71831714/104876999-2bd3c080-599c-11eb-85cb-607f9217cc5e.png"></img>
+<img src="https://user-images.githubusercontent.com/71831714/105170244-fed00b00-5b5f-11eb-8fc5-2078783c3a98.png" width='800'></img>
 
 #### 2-5. 추가 데이터 예측
 <img src="https://user-images.githubusercontent.com/71831714/104873394-bfed5a00-5993-11eb-8cc5-5bb17ae21ae3.png" width='600'></img>
