@@ -121,28 +121,21 @@ twitch_cln = twitch_cln.sort_values(by="Watch time(Minutes)", ascending=False)
 df_2 = []
 
 def lin_regr(data, drop_cols=[[], ['Date'], ['English'], ['Partnered'], ['Date','English','Partnered']]):
-
     df = []
-
     for column in drop_cols:
         X = data.drop(columns = ['Channel','Language','Desc', 'Followers gained'] + column)
         y = data['Followers gained']
-
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=10)
         
         rgr_list = [LinearRegression(), ElasticNet(alpha=0.1, l1_ratio=0.5), SVR(kernel='poly', degree=2, C=100, epsilon=0.1), 
                     RandomForestRegressor(max_depth=2, random_state=10)]
         scaler_list = [StandardScaler(), MinMaxScaler()]
-        
+  
         for rgr in rgr_list:
-
             for  scaler in scaler_list:
-            
                 estimators = [('scaler', scaler),
                              ('rgr', rgr)]
-
                 pipe = Pipeline(estimators)
-
                 pipe.fit(X_train, y_train)
 
                 y_pred_tr = pipe.predict(X_train)
@@ -211,7 +204,6 @@ def predict_followers_gained(channel):
              ('rgr', LinearRegression())]
 
     pipe = Pipeline(estimators)
-
     pipe.fit(X_train, y_train)
 
     result = int(round(pipe.predict(channel)[0]))
@@ -240,9 +232,7 @@ estimators = [('scaler', StandardScaler()),
      ('rgr', RandomForestRegressor(max_depth=4, random_state=10))]
 
 pipe = Pipeline(estimators)
-
 pipe.fit(X_train, y_train)
-
 y_pred_test = pipe.predict(X_test)
 
 rmse_test = (np.sqrt(mean_squared_error(y_test, y_pred_test)))
