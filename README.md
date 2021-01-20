@@ -22,24 +22,6 @@
 ## 2. Preview
 
 ```python
-# 패키지 
-import pandas as pd
-import seaborn as sns
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import statsmodels.api as sm
-from statsmodels.stats.outliers_influence import variance_inflation_factor
-from datetime import datetime, timedelta
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
-from sklearn.linear_model import LinearRegression, ElasticNet
-from sklearn.svm import SVR
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
-```
-
-```python
 # 데이터 불러오기 
 twitch_df = pd.read_csv("twitch.csv", parse_dates=['Date'])
 twitch = twitch_df.copy()
