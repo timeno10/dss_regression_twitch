@@ -33,6 +33,7 @@ plt.figure(figsize=(20,8))
 sns.set_style("whitegrid")
 sns.regplot(x='Peak viewers', y='Followers gained', data=twitch.drop(index=[13,14,25]), line_kws={"color": "red"});
 ```
+<img src="https://user-images.githubusercontent.com/71831714/104876380-ec58a480-599a-11eb-8953-7d8754bb02ae.png" width='600'></img>
 
 ```python
 target = twitch['Followers gained']
@@ -44,7 +45,7 @@ feature = pd.DataFrame(scaler.transform(feature), columns = feature.columns)
 model = sm.OLS(target, feature).fit()
 print(model.summary2())
 ```
-<img src="https://user-images.githubusercontent.com/71831714/104876541-3fcaf280-599b-11eb-80b9-14692b9ef6df.png"></img>
+<img src="https://user-images.githubusercontent.com/71831714/104876541-3fcaf280-599b-11eb-80b9-14692b9ef6df.png" width='600'></img>
 
 ```python
 pd.DataFrame({
@@ -52,7 +53,7 @@ pd.DataFrame({
       "features": feature.columns
 })
 ```
-<img src="https://user-images.githubusercontent.com/71831714/104876380-ec58a480-599a-11eb-8953-7d8754bb02ae.png"></img>
+<img src="https://user-images.githubusercontent.com/71831714/105168264-3c7f6480-5b5d-11eb-94f1-90f631874346.png" width='300'></img>
 
 ```python
 mask = np.zeros_like(twitch.corr(), dtype=np.bool)
@@ -68,7 +69,7 @@ cmap = sns.diverging_palette(220, 10, as_cmap=True)
 sns.heatmap(twitch.corr(), mask=mask, cmap=cmap, vmax=.3, center=0,
             square=True, linewidths=.5, cbar_kws={"shrink": .5});
 ```
-<img src="https://user-images.githubusercontent.com/71831714/104876166-76ecd400-599a-11eb-9889-1dbca18a7aad.png"></img>
+<img src="https://user-images.githubusercontent.com/71831714/104876166-76ecd400-599a-11eb-9889-1dbca18a7aad.png" width='600'></img>
 
 #### 2-2. 데이터 전처리
 ```python
@@ -161,34 +162,42 @@ def lin_regr(data, drop_cols=[[], ['Date'], ['English'], ['Partnered'], ['Date',
     
 lin_regr(twitch)
 ```
-<img src="https://user-images.githubusercontent.com/71831714/104876812-c384df00-599b-11eb-9041-ee7de97ab6fb.png"></img>
+<img src="https://user-images.githubusercontent.com/71831714/104876812-c384df00-599b-11eb-9041-ee7de97ab6fb.png" width='600'></img>
 
 #### 2-4. 성능 평가
 ```python
 # 모델 간 성능 비교
 table_df.sort_values(by='R2_Score', ascending=False).head(20)
-
+```
+<img src="https://user-images.githubusercontent.com/71831714/104876990-270f0c80-599c-11eb-83d1-617dd6ba649a.png" width='800'></img>
+```
+# 제거한 컬럼별 R2 Score
 plt.figure(figsize=(16,9))
 sns.set_style("whitegrid")
 sns.boxplot(x='Drop Columns',y='R2_Score',data=table_df).set_title("R2 Score by Columns dropped");
-
+```
+<img src="https://user-images.githubusercontent.com/71831714/104876993-28403980-599c-11eb-99b4-03636c0f0fb1.png"></img>
+```
+# 데이터셋에 따른 R2 Score
 plt.figure(figsize=(16,9))
 sns.boxplot(x='Dataset',y='R2_Score',data=table_df).set_title("R2 Score by Dataset");
-
+```
+<img src="https://user-images.githubusercontent.com/71831714/104876996-29716680-599c-11eb-87cc-13f3a2e2baba.png"></img>
+```
+# 회귀 모델별 R2 Score
 plt.figure(figsize=(16,9))
 sns.boxplot(x='rgr',y='R2_Score',data=table_df).set_title("R2 Score by Rgr");
-
+```
+<img src="https://user-images.githubusercontent.com/71831714/104876998-2aa29380-599c-11eb-97fb-397c10ef272e.png"></img>
+```
+# Scaler별 R2 Score
 plt.figure(figsize=(16,9))
 sns.boxplot(x='scaler',y='R2_Score',data=table_df).set_title("R2 Score by Scaler");
 ```
-<img src="https://user-images.githubusercontent.com/71831714/104876990-270f0c80-599c-11eb-83d1-617dd6ba649a.png"></img>
-<img src="https://user-images.githubusercontent.com/71831714/104876993-28403980-599c-11eb-99b4-03636c0f0fb1.png"></img>
-<img src="https://user-images.githubusercontent.com/71831714/104876996-29716680-599c-11eb-87cc-13f3a2e2baba.png"></img>
-<img src="https://user-images.githubusercontent.com/71831714/104876998-2aa29380-599c-11eb-97fb-397c10ef272e.png"></img>
 <img src="https://user-images.githubusercontent.com/71831714/104876999-2bd3c080-599c-11eb-85cb-607f9217cc5e.png"></img>
 
 #### 2-5. 추가 데이터 예측
-<img src="https://user-images.githubusercontent.com/71831714/104873394-bfed5a00-5993-11eb-8cc5-5bb17ae21ae3.png"></img>
+<img src="https://user-images.githubusercontent.com/71831714/104873394-bfed5a00-5993-11eb-8cc5-5bb17ae21ae3.png" width='600'></img>
 
 ```python
 # 임의의  데이터 예측
