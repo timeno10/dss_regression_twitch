@@ -27,7 +27,7 @@ twitch_df = pd.read_csv("twitch.csv", parse_dates=['Date'])
 twitch = twitch_df.copy()
 ```
 
-#### 2-1. EDA
+### 2-1. EDA
 ```python
 plt.figure(figsize=(20,8))
 sns.set_style("whitegrid")
@@ -71,7 +71,7 @@ sns.heatmap(twitch.corr(), mask=mask, cmap=cmap, vmax=.3, center=0,
 ```
 <img src="https://user-images.githubusercontent.com/71831714/104876166-76ecd400-599a-11eb-9889-1dbca18a7aad.png" width='600'></img>
 
-#### 2-2. 데이터 전처리
+### 2-2. 데이터 전처리
 ```python
 # 문자 데이터를 숫자 데이터로 변환
 twitch['English'] = twitch['Language'] == "English" # 1 if English otherwise 0
@@ -116,7 +116,7 @@ twitch_cln = twitch_str_time.drop(index=index)
 twitch_cln = twitch_cln.sort_values(by="Watch time(Minutes)", ascending=False)
 ```
 
-#### 2-3. 모델링
+### 2-3. 모델링
 ```python
 df_2 = []
 
@@ -164,7 +164,7 @@ lin_regr(twitch)
 ```
 <img src="https://user-images.githubusercontent.com/71831714/104876812-c384df00-599b-11eb-9041-ee7de97ab6fb.png" width='600'></img>
 
-#### 2-4. 성능 평가
+### 2-4. 성능 평가
 ```python
 # 모델 간 성능 비교
 table_df.sort_values(by='R2_Score', ascending=False).head(20)
@@ -196,7 +196,7 @@ sns.boxplot(x='scaler',y='R2_Score',data=table_df).set_title("R2 Score by Scaler
 ```
 <img src="https://user-images.githubusercontent.com/71831714/105170244-fed00b00-5b5f-11eb-8fc5-2078783c3a98.png" width='800'></img>
 
-#### 2-5. 추가 데이터 예측
+### 2-5. 추가 데이터 예측
 <img src="https://user-images.githubusercontent.com/71831714/104873394-bfed5a00-5993-11eb-8cc5-5bb17ae21ae3.png" width='600'></img>
 
 ```python
@@ -226,7 +226,7 @@ predict_followers_gained(dhtekkz)
 # In fact, there are too many external variables that affects prediction.
 # But prediction for this channel was pretty good :)
 ```
-#### 2-6. 파라미터 값 조정
+### 2-6. 파라미터 값 조정
 
 ```python
 # RandomForestRegressor의 max_depth를 4로 조정
