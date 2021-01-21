@@ -3,7 +3,7 @@
 ## 1. Intro
 
 #### 1-1. Topic
-- Twitch 스트리머의 팔로우 증가수를 회귀 모델로 분석 및 예측
+- Twitch 스트리머의 팔로워 증가수를 회귀 모델로 분석 및 예측
 
 #### 1-2. Contents
 1. EDA
@@ -19,7 +19,7 @@
 [twitchtracker] <https://twitchtracker.com/>
 - BeautifulSoup을 활용한 크롤링으로 방송 시작일(Date) feature 추가
 
-## 2. Preview
+## 2. Process
 
 ```python
 # 데이터 불러오기 
