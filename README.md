@@ -19,7 +19,7 @@
 [twitchtracker] <https://twitchtracker.com/>
 - BeautifulSoup을 활용한 크롤링으로 방송 시작일(Date) feature 추가
 
-## 1-4. Roles
+#### 1-4. Roles
 1. 김성준 : twitchtracker 크롤링, EDA, 모델링, 성능 평가, 새로운 데이터 예측, README 작성
 2. 김종찬 : EDA, 모델링, 성능 평가, 새로운 데이터 예측 
 3. 정하윤 : 회귀 모델과 매개 변수 조사
