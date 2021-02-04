@@ -169,26 +169,26 @@ table_df.sort_values(by='R2_Score', ascending=False).head(20)
 ```
 <img src="https://user-images.githubusercontent.com/71831714/104876990-270f0c80-599c-11eb-83d1-617dd6ba649a.png" width='800'></img>
 ```
-# 제거한 컬럼별 R2 Score
+# R2 Score by Columns
 plt.figure(figsize=(16,9))
 sns.set_style("whitegrid")
 sns.boxplot(x='Drop Columns',y='R2_Score',data=table_df).set_title("R2 Score by Columns dropped");
 ```
 <img src="https://user-images.githubusercontent.com/71831714/105170234-fc6db100-5b5f-11eb-848d-448715044608.png" width='800'></img>
 ```
-# 데이터셋에 따른 R2 Score
+# R2 Score by Dataset
 plt.figure(figsize=(16,9))
 sns.boxplot(x='Dataset',y='R2_Score',data=table_df).set_title("R2 Score by Dataset");
 ```
 <img src="https://user-images.githubusercontent.com/71831714/105170239-fd9ede00-5b5f-11eb-8d3d-fa755298f2f3.png" width='800'></img>
 ```
-# 회귀 모델별 R2 Score
+# R2 Score by Regressor
 plt.figure(figsize=(16,9))
 sns.boxplot(x='rgr',y='R2_Score',data=table_df).set_title("R2 Score by Rgr");
 ```
 <img src="https://user-images.githubusercontent.com/71831714/105170242-fe377480-5b5f-11eb-9dd8-882492ba4460.png" width='800'></img>
 ```
-# Scaler별 R2 Score
+# R2 Score by Scaler
 plt.figure(figsize=(16,9))
 sns.boxplot(x='scaler',y='R2_Score',data=table_df).set_title("R2 Score by Scaler");
 ```
