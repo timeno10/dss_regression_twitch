@@ -19,6 +19,11 @@
 [twitchtracker] <https://twitchtracker.com/>
 - BeautifulSoup을 활용한 크롤링으로 방송 시작일(Date) feature 추가
 
+## 1-4. Roles
+1. 김성준 : twitchtracker 크롤링, EDA, 모델링, 성능 평가, 새로운 데이터 예측, README 작성
+2. 김종찬 : EDA, 모델링, 성능 평가, 새로운 데이터 예측 
+3. 정하윤 : 회귀 모델과 매개 변수 조사
+
 ## 2. Process
 
 ```python
@@ -251,9 +256,3 @@ print('RMSE : {}'.format(int(round(rmse_test))), 'MAE : {}'.format(int(round(lin
       2. 회귀 모델들의 parameter값에 따라 성능이 크게 개선됨 -> 추가 학습 후 적용 예정
       3. Support Vector Classifier가 가장 좋은 성능을 보였음
       4. 주어진 features만으로 종속 변수를 예측하기에는 종속 변수에 영향을 끼치는 외부 변수가 너무 많다는 한계점 존재
-
-## 4. Built With
-
-1. 김성준 : twitchtracker 크롤링, EDA, 모델링, 성능 평가, 새로운 데이터 예측, README 작성
-2. 김종찬 : EDA, 모델링, 성능 평가, 새로운 데이터 예측 
-3. 정하윤 : 회귀 모델과 매개 변수 조사
